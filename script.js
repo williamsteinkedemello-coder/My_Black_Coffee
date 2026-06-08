@@ -15,3 +15,11 @@ burgerOpen.addEventListener("click", () => {
 burgerClose.addEventListener("click", () => {
   toggleNavMenu();
 });
+
+const navLinks = document.querySelectorAll(".nav-menu .nav-item a");
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    toggleNavMenu();
+  });
+});

@@ -15,10 +15,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  overflow: hidden;
-}
-
 ul {
   list-style: none;
 }
@@ -111,7 +107,8 @@ header {
     background-color: bisque;
     flex-direction: column;
     width: 200px;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
 
     /* start hidden off-screen */
     transform: translateX(100%);
@@ -127,7 +124,8 @@ header {
 
 .hero-section {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   background-color: rgb(89, 14, 14);
 }
 
@@ -167,4 +165,50 @@ header {
     center/cover no-repeat;
   height: 400px;
   display: block;
+}
+
+/*About section styling*/
+
+.about-section {
+  background: linear-gradient(180deg, rgb(89, 14, 14) 0%, orange 100%);
+}
+
+.about-section .section-content {
+  max-width: 100%;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about-image {
+  width: 400px;
+  background: url("./assets/images/couple-fun.jpg") center/cover no-repeat;
+  height: 400px;
+  border-radius: 50%;
+}
+
+.about-image-wrapper {
+  text-align: center;
+}
+
+.about-details {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.about-details .section-title {
+  color: burlywood;
+  font-family: fantasy;
+  word-spacing: -0.5px;
+  font-size: 50px;
+  margin-bottom: 6px;
+}
+
+.about-details .text {
+  font-style: italic;
 }
