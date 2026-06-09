@@ -91,8 +91,13 @@ header {
   padding: 5px 10px;
   border-radius: 20px;
 }
+
 .nav-menu .nav-item:hover {
   background-color: burlywood;
+}
+
+.nav-menu .nav-item a {
+  color: white;
 }
 
 /*Burguer icon, initially hidden*/
@@ -135,7 +140,6 @@ header {
 .section-details {
   display: flex;
   flex-direction: column;
-  align-items: self-start;
   max-width: 80%;
   padding: 20px;
   gap: 6px;
@@ -152,8 +156,25 @@ header {
   font-size: smaller;
 }
 
+.details-card {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  padding: 20px 60px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 700px;
+  min-height: 30vh;
+  height: auto;
+  margin: auto;
+  border-left: 4px solid #c49a6c; /* coffee gold */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .hero-container {
-  padding: 10px;
+  align-self: center;
 }
 
 .hero-image {
@@ -271,6 +292,10 @@ header {
     gap: 4px;
   }
 
+  .section-content {
+    flex-direction: column;
+  }
+
   .mobile-nav a:hover {
     width: 100%;
     text-align: center;
@@ -299,9 +324,11 @@ header {
     align-items: center;
   }
 
-  svg,
-  .about-image-wrapper,
   .hero-image {
+    scale: 0.7;
+  }
+
+  .about-image-wrapper {
     scale: 0.7;
   }
 }
