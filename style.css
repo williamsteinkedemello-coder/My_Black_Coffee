@@ -44,6 +44,7 @@ svg {
 header {
   width: 100%;
   background-color: rgb(89, 14, 14);
+  padding: 20px;
 }
 
 .navbar {
@@ -62,7 +63,6 @@ header {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 20px;
 }
 
 .nav-logo,
@@ -112,19 +112,19 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 .section-content {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
 .section-details {
   display: flex;
   flex-direction: column;
-  align-items: baseline;
+  align-items: self-start;
   max-width: 80%;
   padding: 20px;
   gap: 6px;
@@ -180,7 +180,6 @@ header {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 60px 20px;
 }
 
 .about-details {
@@ -232,6 +231,10 @@ header {
     visibility: visible;
   }
 
+  .nav-menu-wrapper {
+    display: none;
+  }
+
   .nav-menu {
     display: none;
   }
@@ -278,19 +281,16 @@ header {
     flex-direction: column;
   }
 
-  .about-section .section-content {
+  .section-content {
     display: flex;
     flex-direction: column;
-  }
-
-  .section-content {
-    padding: 60px 20px;
+    justify-content: center;
+    align-items: center;
   }
 
   svg,
   .about-image-wrapper,
-  .hero-container {
-    width: 100%;
+  .hero-image {
     scale: 0.7;
   }
 }
