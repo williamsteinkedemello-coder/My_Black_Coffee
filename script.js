@@ -1,8 +1,16 @@
-const burgerOpen = document.getElementById("burger-open");
+const burger = document.getElementById("burger-open");
 const navMenu = document.querySelector(".nav-menu");
-const burgerClose = document.getElementById("burger-close");
+const burgerClose = document.getElementById("closeBtn");
 
-function toggleNavMenu() {
+burger.addEventListener("click", () => {
+  mobileNav.classList.add("active");
+});
+
+burgerClose.addEventListener("click", () => {
+  mobileNav.classList.remove("active");
+});
+
+/*function toggleNavMenu() {
   navMenu.classList.toggle("active");
   burgerOpen.classList.toggle("hide");
   burgerClose.classList.toggle("active");
@@ -14,8 +22,9 @@ burgerOpen.addEventListener("click", () => {
 
 burgerClose.addEventListener("click", () => {
   toggleNavMenu();
-});
+});*/
 
+/* Upon clicking a given nav link in the nav menu, it'll close. */
 const navLinks = document.querySelectorAll(".nav-menu .nav-item a");
 
 navLinks.forEach((link) => {
