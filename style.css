@@ -168,22 +168,20 @@ header {
    Hero Section
 ========================= */
 .hero-section {
-  min-height: 100vh;
   height: auto;
   background-color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
 }
 
 .container {
-  width: 100%;
-  max-width: 1200px;
+  min-height: 100vh;
+  width: min(1400px, 100% - 2rem);
+  margin-inline: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 2rem;
 }
 
 .section-details {
@@ -233,11 +231,6 @@ header {
     var(--color-primary),
     var(--color-secondary)
   );
-}
-
-.about-section .container {
-  min-height: 100vh;
-  margin: auto;
 }
 
 .about-image-wrapper {
