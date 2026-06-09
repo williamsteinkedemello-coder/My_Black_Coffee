@@ -177,7 +177,7 @@ header {
   padding: 2rem 1rem;
 }
 
-.section-content {
+.container {
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -218,8 +218,8 @@ header {
 
 /* Hero Image */
 .hero-image {
-  width: 400px;
-  height: 400px;
+  width: clamp(250px, 40vw, 500px);
+  aspect-ratio: 1;
   background: url("./assets/images/coffee-cup-coffee-svgrepo-com.svg")
     center/cover no-repeat;
 }
@@ -235,7 +235,7 @@ header {
   );
 }
 
-.about-section .section-content {
+.about-section .container {
   min-height: 100vh;
   margin: auto;
 }
@@ -247,8 +247,8 @@ header {
 }
 
 .about-image {
-  width: 400px;
-  height: 400px;
+  width: clamp(250px, 40vw, 500px);
+  aspect-ratio: 1;
   background: url("./assets/images/couple-fun.jpg") center/cover no-repeat;
   border-radius: var(--radius-round);
 }
@@ -285,7 +285,7 @@ header {
     display: none;
   }
 
-  .section-content {
+  .container {
     flex-direction: column;
     text-align: center;
   }
