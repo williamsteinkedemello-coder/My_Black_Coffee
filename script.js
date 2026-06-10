@@ -18,3 +18,18 @@ navLinks.forEach((link) => {
     mobileNav.classList.remove("active");
   });
 });
+
+const toggleTheme = document.querySelector(".dark-mode");
+
+toggleTheme.addEventListener("click", () => {
+  const html = document.documentElement;
+  console.log(html);
+
+  if (html.dataset.theme === "dark") {
+    html.dataset.theme = "light";
+    toggleTheme.textContent = "Dark Mode On";
+  } else {
+    html.dataset.theme = "dark";
+    toggleTheme.textContent = "Dark Mode Off";
+  }
+});

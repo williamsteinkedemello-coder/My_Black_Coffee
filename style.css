@@ -10,9 +10,10 @@
   --font-main: "Poppins", sans-serif;
   --font-accent: fantasy;
 
-  --color-primary: rgb(89, 14, 14);
-  --color-secondary: burlywood;
-  --color-light: #ffffff;
+  --color-primary: #6c1111;
+  --color-secondary: #7b5422;
+  --color-tertiary: #f3c890;
+  --color-text: #ffffff;
   --color-overlay: rgba(255, 255, 255, 0.1);
 
   --radius-sm: 8px;
@@ -20,6 +21,12 @@
   --radius-round: 50%;
 
   --transition: 0.3s ease;
+}
+
+html[data-theme="dark"] {
+  --color-primary: #390707;
+  --color-secondary: #533610;
+  --color-tertiary: #876b47;
 }
 
 /* =========================
@@ -37,8 +44,8 @@ html {
 }
 
 body {
-  background-color: var(--color-primary);
-  color: var(--color-light);
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
 ul {
@@ -84,7 +91,7 @@ header {
 }
 
 .nav-menu-wrapper {
-  margin: auto;
+  margin-inline: auto;
 }
 
 .nav-menu {
@@ -95,7 +102,7 @@ header {
 
 .nav-menu .nav-item {
   padding: 0.4rem 0.8rem;
-  border-radius: 999px;
+  border-radius: 50px;
   transition: background var(--transition);
 }
 
@@ -119,7 +126,7 @@ header {
   font-family: var(--font-accent);
   font-size: 1.5rem;
   letter-spacing: 1px;
-  color: var(--color-secondary);
+  color: var(--color-tertiary);
 }
 
 /* Burger */
@@ -138,7 +145,7 @@ header {
   right: -100%;
   width: 260px;
   height: 100vh;
-  background: #333;
+  background: var(--color-secondary);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -154,7 +161,7 @@ header {
 
 .mobile-nav a {
   font-size: 1.2rem;
-  color: var(--color-light);
+  color: var(--color-text);
   transition: background var(--transition);
 }
 
@@ -184,25 +191,26 @@ header {
   align-items: center;
 }
 
-.section-details {
+.hero-details {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   max-width: 600px;
 }
 
-.section-details .title {
-  color: var(--color-secondary);
+.hero-details .title {
+  color: var(--color-tertiary);
   font-family: var(--font-accent);
 }
 
-.section-details p {
+.hero-details p {
   margin-top: 1rem;
   font-size: 0.95rem;
 }
 
 .details-card {
   background: var(--color-overlay);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   padding: 2rem;
   border-radius: var(--radius-md);
@@ -257,7 +265,7 @@ header {
 .about-details .section-title {
   font-family: var(--font-accent);
   font-size: 3rem;
-  color: var(--color-secondary);
+  color: var(--color-tertiary);
 }
 
 .about-details .text {
