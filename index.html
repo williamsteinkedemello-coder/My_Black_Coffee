@@ -97,7 +97,13 @@
             </div>
           </div>
           <div class="hero-image-wrapper">
-            <svg class="hero-image" />
+            <!-- Moved inline styles to external stylesheet (add .dotlottie size rules in style.css) -->
+            <dotlottie-wc
+              class="dotlottie"
+              src="https://lottie.host/f9af536d-87ab-4182-915c-aecb705f85c9/yNuCf244Eo.json"
+              autoplay
+              loop
+            ></dotlottie-wc>
           </div>
         </div>
       </section>
@@ -115,10 +121,20 @@
               believe every cup deserves a little magic. Come sip, relax, and
               feel right at home.
             </p>
+            <dotlottie-wc
+              src="https://lottie.host/046e8e03-4874-4bd4-82c9-b1a7fd2be3b3/xGXVIkKVpk.lottie"
+              style="width: 300px; height: 300px"
+              autoplay
+              loop
+            ></dotlottie-wc>
           </div>
         </div>
       </section>
     </main>
+    <script
+      src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js"
+      type="module"
+    ></script>
 
     <script src="script.js"></script>
   </body>
