@@ -13,21 +13,44 @@ function initMobileNavigation() {
   const mobileNav = document.getElementById("mobileNav");
   const burgerClose = document.getElementById("closeBtn");
 
+  //Guard Clause: Ensure elements exist before proceeding
   if (!burger || !mobileNav || !burgerClose) return;
 
-  burger.addEventListener("click", () => {
+  // Open Menu Function
+  const openMenu = () => {
     mobileNav.classList.add("active");
-  });
+    burger.setAttribute("aria-expanded", "true");
+    mobileNav.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  };
 
-  burgerClose.addEventListener("click", () => {
+  // Close Menu Function
+  const closeMenu = () => {
     mobileNav.classList.remove("active");
-  });
+    burger.setAttribute("aria-expanded", "false");
+    mobileNav.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "auto";
+  };
+
+  //Click Event Listeners for opening and closing
+  burger.addEventListener("click", openMenu);
+  burgerClose.addEventListener("click", closeMenu);
   
+  // Close menu when a link is clicked
   const navLinks = document.querySelectorAll(".mobile-nav a");
   navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileNav.classList.remove("active");
-    });
+    link.addEventListener("click", closeMenu);
+  });
+
+  // Close menu when clicking outside of the menu
+  document.addEventListener("click", (event) => {
+    const isClickInsideMenu = mobileNav.contains(event.target);
+    const isClickOnBurger = burger.contains(event.target);  
+
+    // Close menu if the click is outside the menu and the burger icon
+    if (!isClickInsideMenu && !isClickOnBurger) {
+      closeMenu();
+    }
   });
 }
 
