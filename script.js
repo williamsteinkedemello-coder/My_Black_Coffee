@@ -1,29 +1,42 @@
-const burger = document.getElementById("burger-open");
-const mobileNav = document.getElementById("mobileNav");
-const burgerClose = document.getElementById("closeBtn");
-
-burger.addEventListener("click", () => {
-  mobileNav.classList.add("active");
+document.addEventListener("DOMContentLoaded", function () {
+  initMobileNavigation();
+  initThemeToggle();  
 });
 
-burgerClose.addEventListener("click", () => {
-  mobileNav.classList.remove("active");
-});
+/**
+ * 1. Mobile Drawer Navigation Controller
+ * Manages drawer open/close state, accessibilities, and click-outside features.
+ */
 
-/* Upon clicking a given nav link in the mobile nav, it'll close. */
-const navLinks = document.querySelectorAll(".mobile-nav a");
+function initMobileNavigation() {
+  const burger = document.getElementById("burger-open");
+  const mobileNav = document.getElementById("mobileNav");
+  const burgerClose = document.getElementById("closeBtn");
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
+  if (!burger || !mobileNav || !burgerClose) return;
+
+  burger.addEventListener("click", () => {
+    mobileNav.classList.add("active");
+  });
+
+  burgerClose.addEventListener("click", () => {
     mobileNav.classList.remove("active");
   });
-});
+  
+  const navLinks = document.querySelectorAll(".mobile-nav a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileNav.classList.remove("active");
+    });
+  });
+}
 
-const toggleTheme = document.querySelector(".dark-mode");
+function initThemeToggle() {
+  const toggleTheme = document.querySelector(".dark-mode");
+  if (!toggleTheme) return;
 
-toggleTheme.addEventListener("click", () => {
+  toggleTheme.addEventListener("click", () => {
   const html = document.documentElement;
-  console.log(html);
 
   if (html.dataset.theme === "dark") {
     html.dataset.theme = "light";
@@ -33,3 +46,4 @@ toggleTheme.addEventListener("click", () => {
     toggleTheme.textContent = "Dark Mode Off";
   }
 });
+}
